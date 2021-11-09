@@ -1,9 +1,9 @@
 # iFood-Clone
-A UI iFood clone using Kotlin to study purposes.
+Um Ui clone do iFood usando Kotlin para fins de estudo.
 
 
 ## Demonstração
 ![screenshot](ifood-demonstration.png)
 
 
-made by [Gian](https://github.com/Gian-f).
+Feito por [Gian](https://github.com/Gian-f).
