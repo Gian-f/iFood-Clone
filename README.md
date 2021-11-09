@@ -6,4 +6,4 @@ A UI iFood clone using Kotlin to study purposes.
 ![screenshot](ifood-demonstration.png)
 
 
-feito por [Gian](https://github.com/Gian-f).
+made by [Gian](https://github.com/Gian-f).
