@@ -22,6 +22,10 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
         BannerView(it)
     })
 
+    private val shopAdapter=ATAdapter({
+        ShopView(it)
+    })
+
     private var binding : FragmentRestaurantBinding?=null
 
     private var filters=arrayOf(
@@ -78,14 +82,24 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
                         "https://www.ifood.com.br/static/images/categories/drinks.png" ,
                         "Salgados" ,
                         0xFF8C60C5
-                        ) ,
+                        ),
                         )
 
-        bannerAdapter.items=arrayListOf(
+        bannerAdapter.items =arrayListOf (
                 Banner(1,"https://static-images.ifood.com.br/image/upload/t_high/discoveries/itensBasicosNOV21Principal_zE1X.png"),
                 Banner(2,"https://static-images.ifood.com.br/image/upload/t_high/discoveries/MerceariaeMatinaisPrincipal_mfDO.png"),
                 Banner(3,"https://static-images.ifood.com.br/image/upload/t_high/discoveries/Bebidas40offPrincipal_cljA.png"),
-                      )
+                )
+
+        shopAdapter.items = arrayListOf (
+             Shop(1,"https://static-images.ifood.com.br/image/upload/t_high/logosgde/46ebd05c-116e-41cd-b3de-7a05c5bc730a/201811071958_30656.jpg", "Pizza Crek"),
+             Shop(2,"https://static-images.ifood.com.br/image/upload/t_high/logosgde/bb3ad636-7c36-4ae2-a1db-14cd35695350/202001271029_rK15_i.png","Fábrica de Esfiha"),
+             Shop(3,"https://static-images.ifood.com.br/image/upload/t_high/logosgde/2fd863ac-4cc2-476c-8896-99aedfdaeb5f/201911150948_Z9QG_i.jpg","Pecorino"),
+             Shop(4,"https://static-images.ifood.com.br/image/upload/t_high/logosgde/86b58685-a7dc-4596-be26-2c4037b4d591/202006051304_JuRt_i.jpg","Barbacoa Grill"),
+             Shop(5,"https://static-images.ifood.com.br/image/upload/t_high/logosgde/201705131248_0ca51a98-ee95-48ac-b193-48066c8f20cc.png","Bar do Juarez"),
+             Shop(6,"https://static-images.ifood.com.br/image/upload/t_high/logosgde/201705131248_0ca51a98-ee95-48ac-b193-48066c8f20cc.png","Exemplo de Restaurante"),
+             Shop(7,"https://static-images.ifood.com.br/image/upload/t_high/logosgde/201705131248_0ca51a98-ee95-48ac-b193-48066c8f20cc.png","Exemplo de Restaurante"),
+             )
 
         binding=FragmentRestaurantBinding.bind(view)
 
@@ -93,9 +107,12 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
             it.rvCategory.layoutManager=LinearLayoutManager(requireContext() , LinearLayoutManager.HORIZONTAL , false)
             it.rvCategory.adapter=categoryAdapter
 
-        binding?.let {
             it.rvBanners.layoutManager=LinearLayoutManager(requireContext() , LinearLayoutManager.HORIZONTAL , false)
             it.rvBanners.adapter=bannerAdapter
+
+            it.rvShops.layoutManager=LinearLayoutManager(requireContext() , LinearLayoutManager.HORIZONTAL , false)
+            it.rvShops.adapter=shopAdapter
+
             it.rvBanners.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView : RecyclerView , newState : Int) {
                     if (newState == RecyclerView.SCROLL_STATE_IDLE) {
@@ -103,12 +120,13 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
                     }
                 }
             })
+
             addDots(it.dots, bannerAdapter.items.size, 0)
 
             filters.forEach { filter ->
                 it.chipGroupFilter.addView(filter.toChip(requireContext()))
                 }
-            }
+
         }
     }
     private fun addDots(container: LinearLayout , size: Int , position: Int) {
