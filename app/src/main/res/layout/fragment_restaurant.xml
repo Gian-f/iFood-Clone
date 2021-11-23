@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -74,4 +80,23 @@
         android:paddingHorizontal="6dp"
         android:layout_marginTop="12dp" />
 
+    <TextView
+        android:text="@string/shops"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="10dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_more_shops"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingHorizontal="6dp"
+        android:layout_marginTop="12dp" />
+
 </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
