@@ -9,4 +9,7 @@
     <string name="shop_category"> \u2022 %1$s \u2022 %2$.1f km </string>
     <string name="shop_price"> \%1$s min \u2022 R$ %2$.2f </string>
     <string name="shops">Lojas</string>
+    <string name="explore_more">Explore mais com a conta do iFood</string>
+    <string name="enter">Entrar ou cadastrar-se</string>
+    <string name="r_rua_l_2424">R. Rua L,2424</string>
 </resources>

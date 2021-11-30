@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
@@ -17,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
-        android:text="R. Rua L,2424"
+        android:text="@string/r_rua_l_2424"
         android:textSize="13sp" />
         <ImageView
             android:layout_width="wrap_content"
@@ -45,4 +49,31 @@
         android:id="@+id/add_ViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        app:cardElevation="4dp"
+        app:contentPadding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+        
+            <TextView
+                android:text="@string/explore_more"
+                android:layout_gravity="center|top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="@string/enter"
+                android:layout_gravity="center|bottom"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
